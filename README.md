@@ -1,5 +1,5 @@
 # AI_FinalProject
-Repository for the course of Artificial Intelligence final project.
+## Repository for the course of Artificial Intelligence final project.
 """
 This is the main repository where you will find the code for the training of a CNN based on X-ray chest scan (with pneumonia or healthy).
 The work is purely academic and for learning purposes. It does not intend to replace any medical diagnosis.
