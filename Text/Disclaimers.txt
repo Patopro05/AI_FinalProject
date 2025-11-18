@@ -1,0 +1,3 @@
+Pneumonia and tuberculosis (TB) on a chest X-ray can both appear as lung infiltrates,
+but TB is more likely to show upper lobe involvement and cavitation (a cavity or hole), 
+while bacterial pneumonia often presents as consolidation (a dense, white area) in the lower lobes.

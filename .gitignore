@@ -1,0 +1,13 @@
+Data/
+chest_xray/
+__MACOSX/
+
+__pycache__/
+*.pyc
+.DS_Store
+
+.venv/
+venv/
+env/
+
+kaggle.json
