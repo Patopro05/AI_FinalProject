@@ -18,6 +18,7 @@ from tensorflow.keras import layers, models
 from tensorflow.keras.callbacks import EarlyStopping
 import matplotlib.pyplot as plt
 import os
+import numpy as np
 # Dataset directory
 BASE_DIR = 'Data/chest_xray'
 TRAIN_DIR = os.path.join(BASE_DIR, 'train')
@@ -105,7 +106,25 @@ history = model.fit(
         class_weight = class_weights,
         callbacks = [early_stopping_cb] )
 # Model accuracy for both validation and testing
-test_loss, test_acc = model.evaluate(test_dataset)
+test_loss, test_acc = model.evaluate(test_dataset, verbose = 0)
+# Testing 10 random images
+sample_iterator = test_dataset.unbatch().take(10)
+sample_images = []
+sample_labels = []
+for image, label in sample_iterator:
+    sample_images.append(image.numpy())
+    sample_labels.append(label.numpy())
+sample_images = np.array(sample_images)
+sample_labels = np.array(sample_labels)
+raw_predictions = model.predict(sample_images, verbose=0)
+for i in range(10):
+    predicted_score = raw_predictions[i][0]
+    predicted_class = int(predicted_score > 0.5) 
+    true_class = int(sample_labels[i])
+    predicted_name = class_names[predicted_class]
+    true_name = class_names[true_class]
+    print(f"{i+1:2} | {predicted_name:20} | {true_name}")
+
 # Final number of epochs
 epochs_ran = len(history.history['loss'])
 # Graphing plot for Training and Validation
