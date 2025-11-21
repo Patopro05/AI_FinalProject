@@ -9,4 +9,4 @@ Team members:
 2050354 Ulises Castillo Díaz
 2055281 Pablo Daniel Contreras Obregón
 """
-The project is available as a Jupyter Notebook (Google Colab) and as an executable file (.exe).
+The project is available as a Jupyter Notebook (Google Colab) and as an executable file as App.py.
